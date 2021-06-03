@@ -24,7 +24,8 @@ steps:
     zipAfterPublish: True
 
 # this code takes all the files in $(Build.ArtifactStagingDirectory) and uploads them as an artifact of your build.
-- task: PublishPipelineArtifact@1
+- task: PublishBuildArtifact@1
+displayName:"Publish as artifact"
   inputs:
-    targetPath: '$(Build.ArtifactStagingDirectory)' 
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'DotNetTest'
